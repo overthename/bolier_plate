@@ -12,7 +12,8 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        minlength: 5
+        trim: true,
+        unique: 1
     },
     role: {
         type: Number,
@@ -25,8 +26,8 @@ const userSchema = mongoose.Schema({
     tokenExp: {
         type: Number
     }
-})
+});
 
 const User = mongoose.model('User', userSchema)
 
-module.exprots = {User}
+module.exports = { User }
